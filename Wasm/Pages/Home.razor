@@ -1,7 +1,18 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<h1>@Message</h1>
 
-<h1>Hello, world!</h1>
+<button @onclick="IncrementCount">Click Me</button>
+<h3>@Count</h3>
 
-Welcome to your new app.
+@code {
+    [Parameter]
+    public string Message { get; set; } = String.Empty;
+
+    private int Count { get; set; }
+
+    private void IncrementCount()
+    {
+        Count++;
+    }
+}
